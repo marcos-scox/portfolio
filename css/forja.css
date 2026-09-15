@@ -1,0 +1,278 @@
+/* ============================================================
+   MODAL DE APRESENTAÇÃO — FORJA
+   ============================================================
+   Identidade do app, não do portfólio: preto profundo, verde
+   neon (#b9f227, amostrado dos prints), cinza escuro e branco.
+   Escopo isolado em .forja-modal para não vazar no resto do site.
+
+   Animações ligadas ao scroll (js/forja.js alimenta a variável
+   --py e os transforms inline):
+     · barra de progresso no topo
+     · hero preso (sticky) com zoom no aparelho
+     · parallax nos celulares de cada bloco
+     · texto entrando em cascata, deslizando de lado
+
+   NOTA DE DESEMPENHO
+   Nada aqui usa filter:drop-shadow nos mockups. A sombra e o
+   halo verde já vêm gravados no PNG por img/gerar-mockups-forja.py;
+   repetir no CSS obrigava o navegador a rasterizar cada aparelho
+   com blur a cada frame — era o que engasgava o scroll. Pelo mesmo
+   motivo will-change aparece só nos dois elementos que realmente
+   animam o tempo todo, e não nas oito imagens.
+   ============================================================ */
+.forja-modal{
+  --f-verde:#b9f227;
+  --f-verde-suave:rgba(185,242,39,.14);
+  --f-preto:#050605;
+  --f-superficie:#0e100e;
+  --f-borda:rgba(255,255,255,.09);
+  --f-texto:#f4f6f2;
+  --f-muted:#8e948a;
+
+  position:fixed;inset:0;z-index:300;
+  background:var(--f-preto);
+  /* overflow-x:hidden contém o brilho de 120vw do ::before, que
+     senão gera barra de rolagem lateral no celular */
+  overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
+  opacity:0;visibility:hidden;
+  /* Sem transform aqui, de propósito. Qualquer transform diferente
+     de none torna este elemento o bloco de contenção dos filhos
+     position:fixed — era o que fazia o botão de fechar rolar junto
+     com o conteúdo e sumir. A entrada agora é só opacidade; a
+     sensação de movimento vem da animação interna do hero. */
+  transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility .5s;
+  color:var(--f-texto);
+  font-family:'Inter',system-ui,sans-serif;
+}
+.forja-modal.aberto{opacity:1;visibility:visible}
+body.forja-travado{overflow:hidden}
+
+/* Cada app montado ganha sua própria .f-tela; só a do app em exibição
+   fica visível. Assim trocar de card não remonta o que já foi aberto,
+   e o [hidden] some de verdade mesmo com o display:block do CSS. */
+.f-tela[hidden]{display:none}
+
+/* Brilho verde discreto no topo. Ancorado em left/right:0 em vez de
+   120vw + translate: sendo position:fixed ele escapa do overflow do
+   pai, e a largura extra virava barra de rolagem lateral. */
+.forja-modal::before{
+  content:"";position:fixed;top:-30vh;left:0;right:0;
+  height:70vh;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(185,242,39,.10) 0%,transparent 62%);
+}
+
+.f-wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.f-wrap{padding:0 48px}}
+
+/* --- Barra de progresso do scroll -------------------------- */
+.f-progresso{
+  position:fixed;top:0;left:0;right:0;height:3px;z-index:30;
+  background:rgba(255,255,255,.05);pointer-events:none;
+}
+.f-progresso i{
+  display:block;height:100%;width:100%;
+  transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--f-verde),#e4ff86);
+  box-shadow:0 0 14px rgba(185,242,39,.55);
+  will-change:transform;
+}
+
+/* --- Fechar ------------------------------------------------ */
+/* Sem backdrop-filter: um elemento fixo com blur de fundo obriga o
+   navegador a reprocessar o borrão a cada frame de rolagem. O fundo
+   quase opaco resolve visualmente pelo mesmo preço de um retângulo. */
+.f-fechar{
+  position:fixed;top:20px;right:20px;z-index:20;
+  width:46px;height:46px;border-radius:99px;cursor:pointer;
+  display:grid;place-items:center;
+  background:rgba(12,14,12,.94);border:1px solid var(--f-borda);
+  color:var(--f-texto);
+  transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s;
+}
+.f-fechar:hover{transform:rotate(90deg);border-color:var(--f-verde);background:rgba(185,242,39,.14)}
+.f-fechar svg{width:19px;height:19px}
+@media(min-width:768px){.f-fechar{top:28px;right:32px}}
+
+/* --- Tipografia -------------------------------------------- */
+.f-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--f-verde);
+}
+.f-eyebrow::before{content:"";width:26px;height:1px;background:var(--f-verde);opacity:.6}
+
+.f-titulo{
+  font-size:clamp(2.1rem,5.6vw,4.4rem);line-height:1.03;letter-spacing:-.03em;
+  font-weight:700;margin:22px 0 0;
+}
+.f-desc{
+  margin-top:22px;max-width:34rem;
+  font-size:15px;line-height:1.75;color:var(--f-muted);
+}
+@media(min-width:768px){.f-desc{font-size:17px}}
+
+/* --- Botões ------------------------------------------------ */
+.f-acoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.f-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;border-radius:99px;
+  font-size:14.5px;font-weight:600;text-decoration:none;cursor:pointer;
+  border:1px solid transparent;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),background .3s,border-color .3s,color .3s,box-shadow .3s;
+}
+.f-btn:hover{transform:translateY(-2px)}
+.f-btn:active{transform:translateY(0);transition-duration:.09s}
+.f-btn-cheio{background:var(--f-verde);color:#0a0c08;box-shadow:0 0 0 rgba(185,242,39,0)}
+.f-btn-cheio:hover{box-shadow:0 10px 34px rgba(185,242,39,.3)}
+.f-btn-vazio{background:transparent;color:var(--f-texto);border-color:rgba(255,255,255,.16)}
+.f-btn-vazio:hover{border-color:var(--f-verde);color:var(--f-verde)}
+
+/* --- HERO -------------------------------------------------- */
+/* O trilho é só altura extra: enquanto ele passa, a section fica
+   presa no topo e o JS usa esse percurso para dar zoom no aparelho.
+   No celular o trilho tem altura automática e nada gruda — prender
+   a tela em aparelho pequeno atrapalha mais do que ajuda. */
+.f-hero-trilho{position:relative}
+
+.f-hero{
+  display:grid;grid-template-columns:1fr;gap:56px;align-items:center;
+  padding:104px 0 84px;
+}
+@media(min-width:960px){
+  .f-hero-trilho{height:170svh}
+  .f-hero{
+    grid-template-columns:1fr .88fr;gap:64px;
+    position:sticky;top:0;height:100svh;
+    padding-top:0;padding-bottom:0;align-content:center;
+  }
+}
+.f-hero-arte{position:relative;display:grid;place-items:center}
+/* wrapper separado só para o zoom do scroll: assim o JS não briga
+   com o transform de entrada que o .f-anim aplica no pai */
+.f-hero-zoom{position:relative;z-index:2;will-change:transform}
+.f-hero-arte img{
+  width:min(300px,74vw);height:auto;display:block;position:relative;z-index:2;
+}
+@media(min-width:960px){.f-hero-arte img{width:min(340px,32vw)}}
+/* anel de luz verde atrás do aparelho */
+.f-hero-arte::after{
+  content:"";position:absolute;z-index:1;
+  width:min(430px,88vw);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(185,242,39,.20) 0%,rgba(185,242,39,.05) 42%,transparent 68%);
+}
+
+/* --- Blocos de funcionalidade ------------------------------ */
+.f-bloco{padding:84px 0;border-top:1px solid var(--f-borda)}
+@media(min-width:960px){.f-bloco{padding:120px 0}}
+.f-bloco-grid{display:grid;grid-template-columns:1fr;gap:52px;align-items:center}
+@media(min-width:960px){
+  .f-bloco-grid{grid-template-columns:1fr 1fr;gap:72px}
+  /* alterna o lado do texto para o olho não cansar */
+  .f-bloco:nth-of-type(even) .f-bloco-texto{order:2}
+}
+.f-num{
+  font-size:12px;font-weight:600;letter-spacing:.22em;color:var(--f-muted);
+  margin-bottom:16px;display:block;
+}
+.f-num b{color:var(--f-verde);font-weight:600}
+.f-bloco h3{
+  font-size:clamp(1.75rem,4vw,2.9rem);line-height:1.1;letter-spacing:-.02em;font-weight:700;
+}
+.f-bloco p{margin-top:18px;max-width:30rem;font-size:15px;line-height:1.75;color:var(--f-muted)}
+@media(min-width:768px){.f-bloco p{font-size:16.5px}}
+
+/* --- Palco dos aparelhos ----------------------------------- */
+/* --py é o deslocamento de parallax que o JS reescreve a cada frame.
+   Ele entra composto DENTRO dos transforms que já existiam, senão
+   sobrescreveria a rotação e o centramento das pilhas. */
+.f-palco{position:relative;display:grid;place-items:center;min-height:420px}
+@media(min-width:960px){.f-palco{min-height:560px}}
+.f-palco img{display:block;height:auto}
+
+/* um aparelho só, centralizado */
+.f-um img{width:min(280px,66vw);transform:translateY(var(--py,0px))}
+@media(min-width:960px){.f-um img{width:min(310px,26vw)}}
+
+/* destaque grande — usado no Cardio */
+.f-destaque{min-height:480px}
+@media(min-width:960px){.f-destaque{min-height:660px}}
+.f-destaque img{width:min(330px,78vw);transform:translateY(var(--py,0px))}
+@media(min-width:960px){.f-destaque img{width:min(400px,32vw)}}
+
+/* dois ou três aparelhos sobrepostos */
+.f-pilha{position:relative;width:100%;display:block}
+.f-pilha img{position:absolute;left:50%;top:50%;width:min(210px,48vw)}
+@media(min-width:960px){.f-pilha img{width:min(250px,20vw)}}
+.f-pilha img:nth-child(1){transform:translate(-78%,-52%) translateY(var(--py,0px)) rotate(-8deg);z-index:1;opacity:.62}
+.f-pilha img:nth-child(2){transform:translate(-50%,-50%) translateY(var(--py,0px));z-index:3}
+.f-pilha img:nth-child(3){transform:translate(-22%,-48%) translateY(var(--py,0px)) rotate(8deg);z-index:2;opacity:.62}
+/* no celular a sobreposição vira uma pilha mais fechada e legível */
+@media(max-width:639px){
+  .f-pilha img{width:min(190px,52vw)}
+  .f-pilha img:nth-child(1){transform:translate(-72%,-54%) translateY(var(--py,0px)) rotate(-7deg)}
+  .f-pilha img:nth-child(3){transform:translate(-28%,-46%) translateY(var(--py,0px)) rotate(7deg)}
+}
+
+/* --- Entrada ao rolar -------------------------------------- */
+.f-anim{opacity:0;transform:translateY(38px);
+  transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)}
+.f-anim.dentro{opacity:1;transform:translateY(0)}
+.f-anim.d1{transition-delay:.10s} .f-anim.d2{transition-delay:.20s} .f-anim.d3{transition-delay:.30s}
+/* aparelhos entram com um leve zoom, reforçando a profundidade */
+.f-palco.f-anim{transform:translateY(46px) scale(.955)}
+.f-palco.f-anim.dentro{transform:translateY(0) scale(1)}
+
+/* Cascata do texto: número, título e parágrafo deslizam de fora
+   para dentro do bloco. Nos blocos pares o texto fica à direita
+   (order:2), então ele entra pela direita — o movimento acompanha
+   a diagonal de leitura em vez de brigar com ela. */
+.f-bloco-texto .f-anim{transform:translate(-30px,26px)}
+.f-bloco-texto .f-anim.dentro{transform:translate(0,0)}
+@media(min-width:960px){
+  .f-bloco:nth-of-type(even) .f-bloco-texto .f-anim{transform:translate(30px,26px)}
+  .f-bloco:nth-of-type(even) .f-bloco-texto .f-anim.dentro{transform:translate(0,0)}
+}
+
+/* --- Rodapé do modal --------------------------------------- */
+.f-fim{padding:96px 0 120px;border-top:1px solid var(--f-borda);text-align:center}
+.f-fim h3{font-size:clamp(1.6rem,3.6vw,2.5rem);line-height:1.15;font-weight:700;letter-spacing:-.02em}
+.f-fim p{margin:16px auto 0;max-width:30rem;color:var(--f-muted);font-size:15.5px;line-height:1.7}
+.f-fim .f-acoes{justify-content:center}
+.f-selo{
+  display:inline-flex;align-items:center;gap:9px;margin-bottom:26px;
+  padding:7px 16px;border-radius:99px;border:1px solid var(--f-borda);
+  background:var(--f-verde-suave);
+  font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--f-verde);
+}
+.f-selo::before{content:"";width:6px;height:6px;border-radius:99px;background:var(--f-verde)}
+
+/* --- Movimento reduzido ------------------------------------ */
+/* Respeita quem pediu menos movimento no sistema — inclusive o
+   Windows com "Efeitos de animação" desligado, que é o padrão em
+   muita máquina corporativa.
+   A exceção é :root.forca-movimento, ligada pelo JS quando a URL
+   traz ?movimento=1: serve para PREVISUALIZAR as animações sem ter
+   que mexer na configuração do sistema. Visitante nenhum cai nesse
+   caminho, então a preferência continua valendo para quem importa. */
+@media(prefers-reduced-motion:reduce){
+  :root:not(.forca-movimento) .forja-modal,
+  :root:not(.forca-movimento) .f-anim,
+  :root:not(.forca-movimento) .f-palco.f-anim{transition-duration:.01ms !important;transition-delay:0 !important}
+  :root:not(.forca-movimento) .f-anim{opacity:1 !important;transform:none !important}
+  :root:not(.forca-movimento) .f-palco.f-anim{transform:none !important}
+  :root:not(.forca-movimento) .f-bloco-texto .f-anim{transform:none !important}
+  :root:not(.forca-movimento) .f-fechar:hover{transform:none}
+
+  /* hero volta a ser bloco comum, sem prender nem dar zoom */
+  :root:not(.forca-movimento) .f-hero-trilho{height:auto !important}
+  :root:not(.forca-movimento) .f-hero{position:static !important;height:auto !important;
+    padding-top:104px !important;padding-bottom:84px !important}
+  :root:not(.forca-movimento) .f-hero-zoom{transform:none !important}
+
+  /* sem parallax: os aparelhos ficam onde o layout os colocou */
+  :root:not(.forca-movimento) .f-um img,
+  :root:not(.forca-movimento) .f-destaque img{transform:none !important}
+  :root:not(.forca-movimento) .f-pilha img:nth-child(1){transform:translate(-78%,-52%) rotate(-8deg) !important}
+  :root:not(.forca-movimento) .f-pilha img:nth-child(2){transform:translate(-50%,-50%) !important}
+  :root:not(.forca-movimento) .f-pilha img:nth-child(3){transform:translate(-22%,-48%) rotate(8deg) !important}
+}
