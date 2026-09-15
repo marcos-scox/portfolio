@@ -39,8 +39,10 @@ const PROJECTS = [
       { img:"trennix-5", alt:"TRENNIX — escolha do provedor de IA" }
     ] },
   { t:"Painel financeiro", cat:"Sistema web · Finanças", span:5, mock:"dashboard", pronto:true,
+    link:"https://github.com/marcos-scox/financas-app",
     desc:"Indicadores financeiros, visão de resultados e dados organizados para decisões mais seguras." },
   { t:"Currículo online", cat:"Site pessoal · Web", span:7, mock:"siteInstitucional", pronto:true,
+    link:"https://github.com/marcos-scox/curriculo-facil",
     desc:"Uma apresentação profissional clara, responsiva e pensada para transformar experiência em oportunidade." }
 ];
 
