@@ -257,6 +257,7 @@
 
   function mostrar(chave){
     const {no} = montar(chave);
+    modal.dataset.appAtual = chave;
     // esconde as outras telas já montadas
     for(const k in telas) telas[k].no.hidden = (k !== chave);
     atual = chave;

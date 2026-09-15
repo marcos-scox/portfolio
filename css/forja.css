@@ -47,6 +47,32 @@
 .forja-modal.aberto{opacity:1;visibility:visible}
 body.forja-travado{overflow:hidden}
 
+/* Cada produto preserva sua própria identidade dentro do mesmo componente. */
+.forja-modal[data-app-atual="finance"]{
+  --f-verde:#ff174f;
+  --f-verde-suave:rgba(255,23,79,.14);
+  --f-preto:#08070b;
+  --f-superficie:#131018;
+  --f-borda:rgba(255,255,255,.11);
+  --f-texto:#f7f4f6;
+  --f-muted:#a6a0a7;
+}
+.forja-modal[data-app-atual="curriculo"]{
+  --f-verde:#d4a84f;
+  --f-verde-suave:rgba(212,168,79,.14);
+  --f-preto:#070a14;
+  --f-superficie:#111827;
+  --f-borda:rgba(214,224,255,.14);
+  --f-texto:#f5f7ff;
+  --f-muted:#a7afc4;
+}
+.forja-modal[data-app-atual="finance"]::before{
+  background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(255,23,79,.18) 0%,transparent 64%);
+}
+.forja-modal[data-app-atual="curriculo"]::before{
+  background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(37,56,112,.28) 0%,transparent 64%);
+}
+
 /* Cada app montado ganha sua própria .f-tela; só a do app em exibição
    fica visível. Assim trocar de card não remonta o que já foi aberto,
    e o [hidden] some de verdade mesmo com o display:block do CSS. */
