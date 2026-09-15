@@ -83,6 +83,14 @@ nav.pill ul a:hover,nav.pill ul a.active{color:var(--text);background:rgba(31,31
 .nav-cta:hover .ring{opacity:1}
 .nav-cta .face{position:relative;display:block;border-radius:99px;background:var(--surface);color:var(--text);padding:6px 12px;white-space:nowrap}
 @media(min-width:640px){.nav-cta .face{padding:8px 16px}}
+@media(max-width:359px){
+  header.nav{padding:12px 10px}
+  nav.pill{max-width:100%;padding:6px}
+  nav.pill ul{min-width:0}
+  nav.pill ul a{padding:6px 8px;font-size:11px}
+  .logo{width:32px;height:32px}
+  .nav-cta .face{padding:6px 8px;font-size:11px}
+}
 
 /* ============================================================
    3. HERO
@@ -95,7 +103,9 @@ nav.pill ul a:hover,nav.pill ul a.active{color:var(--text);background:rgba(31,31
 /* fallback enquanto o vídeo não carrega */
 .videobox{background:radial-gradient(ellipse at 50% 40%,#12233a 0%,#0a0a0a 70%)}
 
-.hero-inner{position:relative;z-index:10;width:100%;padding:128px 0 96px}
+.hero-inner{position:relative;z-index:10;width:100%;padding:128px 24px 96px}
+@media(min-width:768px){.hero-inner{padding-left:40px;padding-right:40px}}
+@media(min-width:1024px){.hero-inner{padding-left:64px;padding-right:64px}}
 
 /* Retrato ---------------------------------------------------- */
 .portrait{position:relative;width:88px;height:88px;border-radius:99px;padding:2px;margin-bottom:28px}
