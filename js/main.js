@@ -479,7 +479,7 @@ document.body.classList.add("ready");
    PARALLAX DAS COLUNAS
    ============================================================ */
 (function(){
-  if(REDUCED) return;
+  if(REDUCED || window.matchMedia("(max-width:767px)").matches) return;
   const stage=document.getElementById("parStage");
   const cols=[...document.querySelectorAll(".par-col")];
   let ticking=false;

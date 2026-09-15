@@ -284,6 +284,17 @@ button.card{border:1px solid var(--stroke);background:var(--surface)}
 .par-item .cap{position:absolute;left:0;right:0;bottom:0;padding:32px 16px 16px;background:linear-gradient(to top,rgba(8,8,8,.97) 0%,rgba(8,8,8,.9) 40%,rgba(8,8,8,.5) 70%,transparent 100%);color:var(--text);display:flex;flex-direction:column;gap:4px}
 .par-item .cap b{font-size:13px;font-weight:500;text-shadow:0 1px 10px rgba(0,0,0,.9)}
 .par-item .cap i{font-style:normal;font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:#b9b9b9;text-shadow:0 1px 10px rgba(0,0,0,.9)}
+/* No celular, as duas colunas absolutas cruzavam o título sticky e
+   deixavam os cards sobrepostos ao texto. A composição vira uma lista
+   vertical fluida; o laboratório continua com o mesmo visual. */
+@media(max-width:767px){
+  #exploracoes{padding-bottom:24px}
+  .par-stage{min-height:0}
+  .par-center{position:relative;top:auto;height:auto;min-height:0;padding:96px 24px 48px}
+  .par-cols{position:relative;inset:auto;display:grid;grid-template-columns:1fr;gap:20px;padding:0 24px 88px}
+  .par-col{display:contents;transform:none !important}
+  .par-item{width:100%;max-width:none;aspect-ratio:4/3;transform:rotate(0deg) !important}
+}
 
 /* Lightbox */
 #lightbox{position:fixed;inset:0;z-index:200;background:rgba(5,5,5,.92);backdrop-filter:blur(8px);display:none;place-items:center;padding:24px;cursor:zoom-out}
