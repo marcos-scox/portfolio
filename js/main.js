@@ -42,18 +42,18 @@ const PROJECTS = [
     link:"https://github.com/marcos-scox/financas-app",
     desc:"Contas, investimentos, reservas e assistente financeiro em uma experiência real de aplicativo.",
     slides:[
-      { img:"finance-inicio", alt:"Finance+ — tela inicial com visão geral" , capa:true},
-      { img:"finance-contas", alt:"Finance+ — tela de contas e vencimentos" },
-      { img:"finance-investimentos", alt:"Finance+ — tela de investimentos" },
-      { img:"finance-assistente", alt:"Finance+ — assistente financeiro" }
+      { img:"finance-curriculo/finance-inicio", alt:"Finance+ — tela inicial com visão geral" , capa:true},
+      { img:"finance-curriculo/finance-contas", alt:"Finance+ — tela de contas e vencimentos" },
+      { img:"finance-curriculo/finance-investimentos", alt:"Finance+ — tela de investimentos" },
+      { img:"finance-curriculo/finance-assistente", alt:"Finance+ — assistente financeiro" }
     ] },
   { t:"Currículo Fácil", cat:"Site pessoal · Web", span:7, pronto:true, abreApp:"curriculo",
     link:"https://github.com/marcos-scox/curriculo-facil",
     desc:"Escolha um modelo, preencha sua trajetória e veja o currículo pronto para compartilhar.",
     slides:[
-      { img:"curriculo-editor", alt:"Currículo Fácil — editor e preview do currículo", capa:true },
-      { img:"curriculo-modelos-1", alt:"Currículo Fácil — galeria de modelos" },
-      { img:"curriculo-modelos-2", alt:"Currículo Fácil — mais modelos disponíveis" }
+      { img:"finance-curriculo/curriculo-editor", alt:"Currículo Fácil — editor e preview do currículo", capa:true },
+      { img:"finance-curriculo/curriculo-modelos-1", alt:"Currículo Fácil — galeria de modelos" },
+      { img:"finance-curriculo/curriculo-modelos-2", alt:"Currículo Fácil — mais modelos disponíveis" }
     ] }
 ];
 
