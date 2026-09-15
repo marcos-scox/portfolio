@@ -38,12 +38,23 @@ const PROJECTS = [
       { img:"trennix-4", alt:"TRENNIX — chat com o treinador de IA" },
       { img:"trennix-5", alt:"TRENNIX — escolha do provedor de IA" }
     ] },
-  { t:"Painel financeiro", cat:"Sistema web · Finanças", span:5, mock:"dashboard", pronto:true,
+  { t:"Finance+", cat:"App mobile · Finanças", span:5, pronto:true, abreApp:"finance",
     link:"https://github.com/marcos-scox/financas-app",
-    desc:"Indicadores financeiros, visão de resultados e dados organizados para decisões mais seguras." },
-  { t:"Currículo online", cat:"Site pessoal · Web", span:7, mock:"siteInstitucional", pronto:true,
+    desc:"Contas, investimentos, reservas e assistente financeiro em uma experiência real de aplicativo.",
+    slides:[
+      { img:"finance-inicio", alt:"Finance+ — tela inicial com visão geral" , capa:true},
+      { img:"finance-contas", alt:"Finance+ — tela de contas e vencimentos" },
+      { img:"finance-investimentos", alt:"Finance+ — tela de investimentos" },
+      { img:"finance-assistente", alt:"Finance+ — assistente financeiro" }
+    ] },
+  { t:"Currículo Fácil", cat:"Site pessoal · Web", span:7, pronto:true, abreApp:"curriculo",
     link:"https://github.com/marcos-scox/curriculo-facil",
-    desc:"Uma apresentação profissional clara, responsiva e pensada para transformar experiência em oportunidade." }
+    desc:"Escolha um modelo, preencha sua trajetória e veja o currículo pronto para compartilhar.",
+    slides:[
+      { img:"curriculo-editor", alt:"Currículo Fácil — editor e preview do currículo", capa:true },
+      { img:"curriculo-modelos-1", alt:"Currículo Fácil — galeria de modelos" },
+      { img:"curriculo-modelos-2", alt:"Currículo Fácil — mais modelos disponíveis" }
+    ] }
 ];
 
 const NOTES = [

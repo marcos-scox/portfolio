@@ -97,6 +97,55 @@ window.APPS = {
           ["perfil","Tela de perfil e preferências do TRENNIX"],
           ["agenda","Agenda do TRENNIX"]] },
     ]
+  },
+
+  finance: {
+    pasta: "img/finance-curriculo/",
+    repo: "https://github.com/marcos-scox/financas-app",
+    eyebrow: "Finance+ Mobile",
+    titulo: "Tudo sob controle, no seu ritmo.",
+    desc: "Organize contas, acompanhe investimentos, crie reservas e converse com um assistente financeiro em uma experiência real de aplicativo.",
+    heroImg: ["finance-inicio", "Finance+ — visão geral do aplicativo"],
+    selo: "Finance+ · Aplicativo financeiro",
+    fimTitulo: "Clareza para decidir melhor.",
+    fimDesc: "Uma experiência financeira completa, com contas, patrimônio, reservas e orientação em um só lugar.",
+    blocos: [
+      { n:"01", tag:"Contas", h:"Veja os vencimentos sem perder o controle.",
+        p:"Calendário, pagamentos e próximos vencimentos reunidos em uma tela simples de acompanhar.",
+        layout:"destaque", imgs:[["finance-contas","Finance+ — tela de contas com calendário de vencimentos"]] },
+      { n:"02", tag:"Investimentos", h:"Acompanhe onde seu dinheiro está.",
+        p:"Registre sua carteira e conecte uma fonte de cotação para acompanhar preços em tempo real.",
+        layout:"um", imgs:[["finance-investimentos","Finance+ — tela de investimentos e carteira"]] },
+      { n:"03", tag:"Reservas", h:"Dê nome aos seus objetivos.",
+        p:"Crie cofrinhos, acompanhe quanto já guardou e transforme planos em metas visíveis.",
+        layout:"pilha", imgs:[["finance-inicio","Finance+ — visão geral"],["finance-cofrinho","Finance+ — tela de cofrinho e reserva"]] },
+      { n:"04", tag:"Assistente", h:"Uma conversa para organizar o próximo passo.",
+        p:"O assistente financeiro ajuda a refletir sobre contas, investimentos e objetivos, sempre com caráter educativo.",
+        layout:"um", imgs:[["finance-assistente","Finance+ — assistente financeiro com IA"]] }
+    ]
+  },
+
+  curriculo: {
+    pasta: "img/finance-curriculo/",
+    repo: "https://github.com/marcos-scox/curriculo-facil",
+    eyebrow: "Currículo Fácil · Web",
+    titulo: "Monte um currículo que abre portas.",
+    desc: "Escolha um modelo, preencha sua trajetória e tenha uma apresentação profissional pronta para compartilhar.",
+    heroImg: ["curriculo-editor", "Currículo Fácil — editor e preview do currículo"],
+    selo: "Currículo Fácil · Editor online",
+    fimTitulo: "Sua experiência, apresentada com clareza.",
+    fimDesc: "Do primeiro modelo ao currículo pronto para enviar, com uma edição visual simples e uma prévia fiel do resultado.",
+    blocos: [
+      { n:"01", tag:"Modelos", h:"Comece com uma base que combina com você.",
+        p:"Uma galeria de modelos para escolher o estilo visual antes de preencher cada parte da sua história.",
+        layout:"destaque", imgs:[["curriculo-modelos-1","Currículo Fácil — galeria de modelos de currículo"]] },
+      { n:"02", tag:"Mais opções", h:"Varie o visual sem recomeçar do zero.",
+        p:"Modelos adicionais mantêm a criação flexível para diferentes áreas, momentos e objetivos profissionais.",
+        layout:"um", imgs:[["curriculo-modelos-2","Currículo Fácil — segunda parte da galeria de modelos"]] },
+      { n:"03", tag:"Editor", h:"Preencha sua experiência vendo o resultado.",
+        p:"Dados pessoais, experiências, formação e habilidades ficam organizados em um editor lateral com preview ao vivo.",
+        layout:"destaque", imgs:[["curriculo-editor","Currículo Fácil — editor com preview do currículo"]] }
+    ]
   }
 
 };
