@@ -8,6 +8,23 @@ Acesse o site publicado no GitHub Pages:
 
 **[marcos-scox.github.io/portfolio](https://marcos-scox.github.io/portfolio/)**
 
+## Chat com Grok
+
+O chat do portfólio usa a rota `/api/chat`, que encaminha as mensagens para a API do Grok. A chave fica somente como variável de ambiente no servidor e nunca é enviada ao navegador.
+
+O projeto não usa mais o n8n para executar a função de IA. O prompt do assistente está incorporado na função serverless e segue as instruções definidas no Notion.
+
+### Publicação
+
+O GitHub Pages hospeda apenas arquivos estáticos e não executa `/api/chat`. Para ativar o chat, publique este repositório em uma plataforma que suporte funções serverless, como Vercel, e configure:
+
+| Variável | Valor |
+|---|---|
+| `GROK_API_KEY` | Sua chave privada da API xAI/Grok |
+| `GROK_MODEL` | `grok-4.6` ou outro modelo ativo na sua conta |
+
+Não coloque a chave em `js/chat.js`, HTML, GitHub ou qualquer arquivo público. Como a chave foi compartilhada em texto nesta solicitação, revogue-a no painel da xAI e gere outra antes da publicação.
+
 ## Projetos em destaque
 
 ### Finance+
