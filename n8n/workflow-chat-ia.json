@@ -20,7 +20,7 @@
     {
       "parameters": {
         "respondWith": "json",
-        "responseBody": "={{ JSON.stringify({ reply: $json.reply }) }}",
+        "responseBody": "={{ { reply: $json.reply } }}",
         "options": {
           "responseHeaders": {
             "entries": [
