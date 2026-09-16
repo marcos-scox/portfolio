@@ -1,20 +1,47 @@
 # Marcos — IA & Automação
 
-Portfólio de projetos em IA aplicada, automação, sistemas web e aplicativos mobile.
+Portfólio de projetos em **IA aplicada, automação, sistemas web e aplicativos mobile**.
 
 ## Portfólio online
 
-Acesse: [marcos-scox.github.io/portfolio](https://marcos-scox.github.io/portfolio/)
+Acesse o site publicado no GitHub Pages:
 
-## Chat com Grok
+**[marcos-scox.github.io/portfolio](https://marcos-scox.github.io/portfolio/)**
 
-O chat do site agora chama diretamente a API do Grok pelo navegador, sem n8n. A configuração está em `js/chat.js`.
+## Projetos em destaque
 
-Atenção: nesse formato direto, a chave da API fica visível para qualquer visitante do site. Se a chave for exposta ou utilizada por terceiros, ela deve ser revogada no painel da xAI e substituída.
+### Finance+
+
+Aplicativo financeiro para organizar contas, acompanhar investimentos, criar reservas e conversar com um assistente financeiro.
+
+- [Ver projeto no GitHub](https://github.com/marcos-scox/financas-app)
+- [Ver no portfólio](https://marcos-scox.github.io/portfolio/)
+
+### Currículo Fácil
+
+Aplicação web para escolher modelos, preencher experiências e visualizar um currículo pronto para compartilhar.
+
+- [Ver projeto no GitHub](https://github.com/marcos-scox/curriculo-facil)
+- [Ver no portfólio](https://marcos-scox.github.io/portfolio/)
+
+### Forja
+
+Aplicativo mobile para treinos, cardio com GPS, histórico de sessões e coach de IA.
+
+- [Ver projeto no GitHub](https://github.com/marcos-scox/forja-app)
+- [Ver no portfólio](https://marcos-scox.github.io/portfolio/)
+
+### TRENNIX
+
+Aplicativo mobile com treinos para casa e academia, agenda semanal e treinador de IA.
+
+- [Ver projeto no GitHub](https://github.com/marcos-scox/trennix-app)
+- [Ver no portfólio](https://marcos-scox.github.io/portfolio/)
 
 ## Tecnologias
 
 - HTML, CSS e JavaScript
+- React Native e Expo
 - Integrações com inteligência artificial
 - Automação de processos
 - GitHub Pages
