@@ -24,6 +24,7 @@
    ============================================================ */
 
 const CHAT_CONFIG = {
+  unavailable: true,
   // URL de produção do Webhook do n8n.
   // Ex.: "https://seu-n8n.com.br/webhook/chat-ia"
   endpoint: "https://samedmedseg.app.n8n.cloud/webhook/chat-ia",
@@ -98,7 +99,18 @@ const CHAT_CONFIG = {
     fab.classList.add("open");
     panel.classList.add("open");
     fab.setAttribute("aria-expanded", "true");
-    if (body.childElementCount === 0) addMessage(CHAT_CONFIG.greeting, "bot");
+    if (body.childElementCount === 0) {
+      addMessage(
+        CHAT_CONFIG.unavailable
+          ? "O chat com IA está indisponível no momento. Tente novamente mais tarde."
+          : CHAT_CONFIG.greeting,
+        CHAT_CONFIG.unavailable ? "error" : "bot"
+      );
+    }
+    if (CHAT_CONFIG.unavailable) {
+      input.disabled = true;
+      sendBtn.disabled = true;
+    }
     setTimeout(() => input.focus(), 250);
   }
 
@@ -133,7 +145,7 @@ const CHAT_CONFIG = {
     e.preventDefault();
 
     const text = input.value.trim();
-    if (!text || sending) return;
+    if (CHAT_CONFIG.unavailable || !text || sending) return;
 
     addMessage(text, "user");
     input.value = "";
