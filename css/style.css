@@ -337,7 +337,7 @@ footer .lead{max-width:32rem;font-size:14px;color:var(--muted);line-height:1.7;m
 .social-qrs{margin-top:48px;padding-top:24px;border-top:1px solid var(--stroke)}
 .social-qr-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:24px}
 .social-qr-head p:last-child{font-size:13px;color:var(--muted);line-height:1.6;text-align:right}
-.social-qr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,128px));gap:12px;max-width:420px}
+.social-qr-grid{display:grid;grid-template-columns:repeat(4,minmax(0,120px));gap:12px;max-width:540px}
 .social-qr-card{display:flex;flex-direction:column;gap:9px;padding:8px;border:1px solid var(--stroke);border-radius:13px;background:rgba(20,20,20,.55);color:var(--text);text-decoration:none;transition:transform .35s cubic-bezier(.23,1,.32,1),border-color .3s,background .3s}
 .social-qr-card:hover{transform:translateY(-4px);border-color:rgba(137,170,204,.55);background:rgba(30,30,30,.75)}
 .social-qr-image{display:block;aspect-ratio:1;overflow:hidden;border-radius:8px;background:#fff}
