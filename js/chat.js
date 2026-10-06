@@ -24,7 +24,7 @@
    ============================================================ */
 
 const CHAT_CONFIG = {
-  unavailable: false,
+  unavailable: true,
   // URL de produção do Webhook do n8n.
   // Ex.: "https://seu-n8n.com.br/webhook/chat-ia"
   endpoint: "https://samedmedseg.app.n8n.cloud/webhook/chat-ia",
