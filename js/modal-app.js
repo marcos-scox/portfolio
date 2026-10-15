@@ -55,7 +55,52 @@
       figura(app.pasta, b.imgs[0][0], b.imgs[0][1])}</div>`;
   }
 
+  function landingHtml(app){
+    const bullet = itens => itens.map(item=>`<li><span>✓</span>${item}</li>`).join("");
+    return `
+    <div class="f-progresso" aria-hidden="true"><i></i></div>
+
+    <button class="f-fechar" type="button" aria-label="Fechar apresentação">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+        <path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+
+    <header class="px-nav f-wrap">
+      <a class="px-logo" href="#pxInicio" data-ir="pxInicio" aria-label="Pipyscox — início"><span>✦</span> Pipyscox</a>
+      <nav aria-label="Navegação da apresentação">
+        <a href="#pxInicio">Início</a><a href="#appFuncs">Funcionalidades</a><a href="#pxSobre">Sobre</a>
+      </nav>
+      <div class="px-nav-actions"><a class="px-login" href="${app.repo}" target="_blank" rel="noopener">GitHub</a><a class="f-btn f-btn-cheio px-nav-cta" href="${app.repo}" target="_blank" rel="noopener">Conhecer agora →</a></div>
+    </header>
+
+    <div id="pxInicio" class="f-hero-trilho px-hero-trilho">
+      <section class="f-wrap f-hero px-hero">
+        <div class="f-hero-texto px-hero-texto">
+          <span class="px-kicker f-anim">Organização · Foco · Resultados</span>
+          <h2 class="f-titulo f-anim d1">Fluxos organizados para equipes que <em>precisam avançar.</em></h2>
+          <p class="f-desc f-anim d2">A plataforma completa para organizar tarefas, projetos e processos — com mais clareza, menos caos e resultados melhores.</p>
+          <div class="f-acoes f-anim d3"><a class="f-btn f-btn-cheio" href="${app.repo}" target="_blank" rel="noopener">Começar agora →</a><button class="f-btn f-btn-vazio" type="button" data-ir="appFuncs">Ver demonstração ◇</button></div>
+        </div>
+        <div class="f-hero-arte px-hero-arte f-anim d2"><div class="f-hero-zoom px-device">${figura(app.pasta,"dashboard","Pipyscox — dashboard do sistema",true)}</div></div>
+      </section>
+    </div>
+
+    <div id="appFuncs" class="px-funcs">
+      ${app.landingBlocos.map((b,i)=>`<section class="px-section f-bloco ${i%2 ? "px-reverse":""}">
+        <div class="f-wrap px-section-inner">
+          <div class="px-section-copy f-anim"><span class="px-kicker">${b.tag}</span><h3>${b.h}</h3><p>${b.p}</p><ul>${bullet(b.bullets)}</ul></div>
+          <div class="px-section-art f-palco f-anim"><div class="px-glow"></div>${figura(app.pasta,b.img,b.alt)}</div>
+        </div>
+      </section>`).join("")}
+    </div>
+
+    <section id="pxSobre" class="px-fim f-bloco f-fim">
+      <div class="f-wrap"><span class="f-selo f-anim">Pronto para começar?</span><h3 class="f-anim d1">${app.fimTitulo}</h3><p class="f-anim d2">${app.fimDesc}</p><div class="f-acoes f-anim d3"><a class="f-btn f-btn-cheio" href="${app.repo}" target="_blank" rel="noopener">Começar agora →</a><a class="f-btn f-btn-vazio" href="${app.repo}" target="_blank" rel="noopener">Ver demonstração ◇</a></div></div>
+    </section>`;
+  }
+
   function html(app){
+    if(app.landing) return landingHtml(app);
     return `
     <div class="f-progresso" aria-hidden="true"><i></i></div>
 
@@ -224,7 +269,8 @@
     const irPara = no.querySelector("[data-ir]");
     if(irPara) irPara.addEventListener("click", ()=>{
       const alvo = no.querySelector("#appFuncs");
-      if(alvo) alvo.scrollIntoView({behavior: reduzido() ? "auto" : "smooth", block:"start"});
+      const destino = no.querySelector(`#${irPara.dataset.ir || "appFuncs"}`);
+      if(destino) destino.scrollIntoView({behavior: reduzido() ? "auto" : "smooth", block:"start"});
     });
 
     // link de contato: fecha o modal e vai pra seção do site

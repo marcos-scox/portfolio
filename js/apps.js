@@ -126,6 +126,7 @@ window.APPS = {
   },
 
   pipyscox: {
+    landing: true,
     pasta: "img/pipyscox/",
     repo: "https://github.com/marcos-scox/pipyscox",
     eyebrow: "Pipyscox · Web + APK",
@@ -135,6 +136,20 @@ window.APPS = {
     selo: "Pipyscox · Web responsiva + APK Android",
     fimTitulo: "Seu processo, do quadro ao resultado.",
     fimDesc: "O Pipyscox reúne operação, dados e acompanhamento em um só lugar — acessível pelo navegador ou pelo APK para Android.",
+    landingBlocos: [
+      { tag:"Fluxo inteligente", h:"Veja o fluxo inteiro de uma vez.",
+        p:"Pare com a troca de abas e o caos de informações. Tenha uma visão completa de tudo o que importa para o seu time, em um só lugar.",
+        bullets:["Projetos e tarefas organizados","Acompanhe o progresso em tempo real","Visualização em quadro, lista ou calendário"], img:"dashboard", alt:"Pipyscox — quadro de fluxos e tarefas" },
+      { tag:"Organização sem esforço", h:"Tudo que a equipe precisa em cada card.",
+        p:"Cada tarefa pode reunir responsáveis, prazos, tags, arquivos, comentários e histórico — sem perder o contexto do trabalho.",
+        bullets:["Responsáveis e prazos","Anexos e comentários","Histórico de atividades"], img:"clientes", alt:"Pipyscox — detalhes de um card" },
+      { tag:"Sempre com você", h:"Adapte o sistema ao seu processo.",
+        p:"Com um app moderno e intuitivo, você acessa tudo de onde estiver. Mantenha sua equipe produtiva, mesmo fora do escritório.",
+        bullets:["Funciona no navegador e no Android","Notificações em tempo real","Sincronização entre dispositivos"], img:"mobile-1", alt:"Pipyscox — versão mobile para Android" },
+      { tag:"Planos e integrações", h:"Web no computador. APK no celular.",
+        p:"Use diretamente no navegador ou instale o APK para Android. A mesma experiência, em qualquer lugar.",
+        bullets:["Versão Web responsiva","APK para Android","Dados e fluxos sempre organizados"], img:"mobile-3", alt:"Pipyscox — versão Web e mobile" }
+    ],
     blocos: [
       { n:"01", tag:"Quadro", h:"Veja o fluxo inteiro de uma vez.",
         p:"Pipys com fases, cores, ordem e cards arrastáveis para acompanhar cada etapa do trabalho com clareza.",
