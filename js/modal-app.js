@@ -56,6 +56,17 @@
   }
 
   function landingHtml(app){
+    if(app.landingImage){
+      return `
+      <div class="f-progresso" aria-hidden="true"><i></i></div>
+      <button class="f-fechar" type="button" aria-label="Fechar apresentação">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="px-exact-reference">
+        <img src="${app.pasta}${app.landingImage}.webp" alt="Landing page do Pipyscox com versão Web e APK para celular" decoding="async">
+      </div>`;
+    }
     const bullet = itens => itens.map(item=>`<li><span>✓</span>${item}</li>`).join("");
     return `
     <div class="f-progresso" aria-hidden="true"><i></i></div>

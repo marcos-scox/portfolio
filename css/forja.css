@@ -72,6 +72,8 @@ body.forja-travado{overflow:hidden}
 .forja-modal[data-app-atual="pipyscox"]::before{
   background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(29,142,133,.24) 0%,transparent 64%);
 }
+.forja-modal[data-app-atual="pipyscox"] .px-exact-reference{width:min(820px,100%);margin:0 auto;position:relative;z-index:1;background:#061214}
+.forja-modal[data-app-atual="pipyscox"] .px-exact-reference img{display:block;width:100%;height:auto}
 
 /* --- Landing page do Pipyscox ------------------------------- */
 .forja-modal[data-app-atual="pipyscox"]{

@@ -127,6 +127,7 @@ window.APPS = {
 
   pipyscox: {
     landing: true,
+    landingImage: "landing-page-reference",
     pasta: "img/pipyscox/",
     repo: "https://github.com/marcos-scox/pipyscox",
     eyebrow: "Pipyscox · Web + APK",
