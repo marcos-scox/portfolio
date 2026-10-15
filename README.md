@@ -17,11 +17,11 @@ Aplicativo financeiro para organizar contas, acompanhar investimentos, criar res
 - [Ver projeto no GitHub](https://github.com/marcos-scox/financas-app)
 - [Ver no portfólio](https://marcos-scox.github.io/portfolio/)
 
-### Currículo Fácil
+### Pipyscox
 
-Aplicação web para escolher modelos, preencher experiências e visualizar um currículo pronto para compartilhar.
+Sistema de gestão de fluxos no estilo kanban, com quadro de trabalho, cards, fases, relatórios, interface responsiva para celular e APK para Android.
 
-- [Ver projeto no GitHub](https://github.com/marcos-scox/curriculo-facil)
+- [Ver projeto no GitHub](https://github.com/marcos-scox/pipyscox)
 - [Ver no portfólio](https://marcos-scox.github.io/portfolio/)
 
 ### Forja

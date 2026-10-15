@@ -47,13 +47,13 @@ const PROJECTS = [
       { img:"finance-curriculo/finance-investimentos", alt:"Finance+ — tela de investimentos" },
       { img:"finance-curriculo/finance-assistente", alt:"Finance+ — assistente financeiro" }
     ] },
-  { t:"Currículo Fácil", cat:"Site pessoal · Web", span:7, pronto:true, abreApp:"curriculo",
-    link:"https://github.com/marcos-scox/curriculo-facil",
-    desc:"Escolha um modelo, preencha sua trajetória e veja o currículo pronto para compartilhar.",
+  { t:"Pipyscox", cat:"Sistema de gestão · Web + APK", span:7, pronto:true, abreApp:"pipyscox",
+    link:"https://github.com/marcos-scox/pipyscox",
+    desc:"Gestão de fluxos no estilo kanban, com versão web responsiva e APK para Android.",
     slides:[
-      { img:"finance-curriculo/curriculo-editor", alt:"Currículo Fácil — editor e preview do currículo", capa:true },
-      { img:"finance-curriculo/curriculo-modelos-1", alt:"Currículo Fácil — galeria de modelos" },
-      { img:"finance-curriculo/curriculo-modelos-2", alt:"Currículo Fácil — mais modelos disponíveis" }
+      { img:"pipyscox/dashboard", alt:"Pipyscox — dashboard do sistema de gestão", capa:true },
+      { img:"pipyscox/mobile-1", alt:"Pipyscox — versão mobile para Android" },
+      { img:"pipyscox/mobile-2", alt:"Pipyscox — telas do sistema no celular" }
     ] }
 ];
 

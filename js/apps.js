@@ -125,26 +125,32 @@ window.APPS = {
     ]
   },
 
-  curriculo: {
-    pasta: "img/finance-curriculo/",
-    repo: "https://github.com/marcos-scox/curriculo-facil",
-    eyebrow: "Currículo Fácil · Web",
-    titulo: "Monte um currículo que abre portas.",
-    desc: "Escolha um modelo, preencha sua trajetória e tenha uma apresentação profissional pronta para compartilhar.",
-    heroImg: ["curriculo-editor", "Currículo Fácil — editor e preview do currículo"],
-    selo: "Currículo Fácil · Editor online",
-    fimTitulo: "Sua experiência, apresentada com clareza.",
-    fimDesc: "Do primeiro modelo ao currículo pronto para enviar, com uma edição visual simples e uma prévia fiel do resultado.",
+  pipyscox: {
+    pasta: "img/pipyscox/",
+    repo: "https://github.com/marcos-scox/pipyscox",
+    eyebrow: "Pipyscox · Web + APK",
+    titulo: "Fluxos organizados para equipes que precisam avançar.",
+    desc: "Sistema de gestão de fluxos no estilo kanban, com quadro de trabalho, cards, fases, relatórios e uma experiência responsiva que funciona na web e no Android.",
+    heroImg: ["dashboard", "Pipyscox — dashboard do sistema de gestão"],
+    selo: "Pipyscox · Web responsiva + APK Android",
+    fimTitulo: "Seu processo, do quadro ao resultado.",
+    fimDesc: "O Pipyscox reúne operação, dados e acompanhamento em um só lugar — acessível pelo navegador ou pelo APK para Android.",
     blocos: [
-      { n:"01", tag:"Modelos", h:"Comece com uma base que combina com você.",
-        p:"Uma galeria de modelos para escolher o estilo visual antes de preencher cada parte da sua história.",
-        layout:"destaque", imgs:[["curriculo-modelos-1","Currículo Fácil — galeria de modelos de currículo"]] },
-      { n:"02", tag:"Mais opções", h:"Varie o visual sem recomeçar do zero.",
-        p:"Modelos adicionais mantêm a criação flexível para diferentes áreas, momentos e objetivos profissionais.",
-        layout:"um", imgs:[["curriculo-modelos-2","Currículo Fácil — segunda parte da galeria de modelos"]] },
-      { n:"03", tag:"Editor", h:"Preencha sua experiência vendo o resultado.",
-        p:"Dados pessoais, experiências, formação e habilidades ficam organizados em um editor lateral com preview ao vivo.",
-        layout:"destaque", imgs:[["curriculo-editor","Currículo Fácil — editor com preview do currículo"]] }
+      { n:"01", tag:"Quadro", h:"Veja o fluxo inteiro de uma vez.",
+        p:"Pipys com fases, cores, ordem e cards arrastáveis para acompanhar cada etapa do trabalho com clareza.",
+        layout:"destaque", imgs:[["dashboard","Pipyscox — dashboard com visão geral dos fluxos"]] },
+      { n:"02", tag:"Dados", h:"Tudo que a equipe precisa em cada card.",
+        p:"Cadastre clientes e processos com campos personalizados, tags, responsáveis, arquivos, comentários e histórico de atividades.",
+        layout:"um", imgs:[["clientes","Pipyscox — gestão de clientes e cards"]] },
+      { n:"03", tag:"Configurações", h:"Adapte o sistema ao seu processo.",
+        p:"Configure fases, automações, preferências e o modo de trabalho de cada equipe sem perder a simplicidade da operação.",
+        layout:"pilha", imgs:[["configuracoes","Pipyscox — configurações do sistema"],["mobile-1","Pipyscox — versão mobile no Android"],["mobile-2","Pipyscox — telas do sistema no celular"]] },
+      { n:"04", tag:"Controle", h:"Acompanhe, exporte e mantenha tudo organizado.",
+        p:"Relatórios em PDF, backup automático, exportação em ZIP e lixeira de 30 dias ajudam a preservar o histórico e os dados da operação.",
+        layout:"um", imgs:[["lixeira","Pipyscox — lixeira e controle de dados"]] },
+      { n:"05", tag:"Plataformas", h:"Web no computador. APK no celular.",
+        p:"Use diretamente no navegador ou instale o APK para Android. A interface responsiva se adapta ao celular e ao tablet para acompanhar o trabalho de onde estiver.",
+        layout:"pilha", imgs:[["mobile-3","Pipyscox — sistema aberto no celular"],["mobile-4","Pipyscox — navegação mobile"],["dashboard","Pipyscox — versão web do sistema"]] }
     ]
   }
 

@@ -57,20 +57,20 @@ body.forja-travado{overflow:hidden}
   --f-texto:#f7f4f6;
   --f-muted:#a6a0a7;
 }
-.forja-modal[data-app-atual="curriculo"]{
-  --f-verde:#d4a84f;
-  --f-verde-suave:rgba(212,168,79,.14);
-  --f-preto:#070a14;
-  --f-superficie:#111827;
-  --f-borda:rgba(214,224,255,.14);
-  --f-texto:#f5f7ff;
-  --f-muted:#a7afc4;
+.forja-modal[data-app-atual="pipyscox"]{
+  --f-verde:#65d6c4;
+  --f-verde-suave:rgba(101,214,196,.14);
+  --f-preto:#071012;
+  --f-superficie:#102022;
+  --f-borda:rgba(190,244,236,.14);
+  --f-texto:#f1fffc;
+  --f-muted:#9db8b4;
 }
 .forja-modal[data-app-atual="finance"]::before{
   background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(255,23,79,.18) 0%,transparent 64%);
 }
-.forja-modal[data-app-atual="curriculo"]::before{
-  background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(37,56,112,.28) 0%,transparent 64%);
+.forja-modal[data-app-atual="pipyscox"]::before{
+  background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(29,142,133,.24) 0%,transparent 64%);
 }
 
 /* Cada app montado ganha sua própria .f-tela; só a do app em exibição
