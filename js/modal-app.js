@@ -39,9 +39,11 @@
   /* ---------- montagem do HTML ---------- */
 
   function figura(pasta, nome, alt, ansioso){
-    return `<img src="${pasta}${nome}-sm.webp"
-      srcset="${pasta}${nome}-sm.webp 340w, ${pasta}${nome}.webp 620w"
-      sizes="(max-width:959px) 60vw, 26vw"
+    const originalMobile = pasta === "img/pipyscox/" && nome.startsWith("mobile-");
+    const extensao = originalMobile ? "png" : "webp";
+    const arquivo = `${pasta}${nome}.${extensao}`;
+    return `<img src="${arquivo}"
+      ${originalMobile ? "" : `srcset="${pasta}${nome}-sm.webp 340w, ${arquivo} 620w" sizes="(max-width:959px) 60vw, 26vw"`}
       alt="${alt}" loading="${ansioso?"eager":"lazy"}" decoding="async">`;
   }
 
