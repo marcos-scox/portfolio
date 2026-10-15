@@ -127,7 +127,6 @@ window.APPS = {
 
   pipyscox: {
     landing: true,
-    landingImage: "landing-page-reference",
     pasta: "img/pipyscox/",
     repo: "https://github.com/marcos-scox/pipyscox",
     eyebrow: "Pipyscox · Web + APK",
@@ -146,10 +145,10 @@ window.APPS = {
         bullets:["Responsáveis e prazos","Anexos e comentários","Histórico de atividades"], img:"clientes", alt:"Pipyscox — detalhes de um card" },
       { tag:"Sempre com você", h:"Adapte o sistema ao seu processo.",
         p:"Com um app moderno e intuitivo, você acessa tudo de onde estiver. Mantenha sua equipe produtiva, mesmo fora do escritório.",
-        bullets:["Funciona no navegador e no Android","Notificações em tempo real","Sincronização entre dispositivos"], img:"mobile-1", alt:"Pipyscox — versão mobile para Android" },
+        bullets:["Funciona no navegador e no Android","Notificações em tempo real","Sincronização entre dispositivos"], imgs:["mobile-1","mobile-2"], alt:"Pipyscox — telas da versão mobile para Android" },
       { tag:"Planos e integrações", h:"Web no computador. APK no celular.",
         p:"Use diretamente no navegador ou instale o APK para Android. A mesma experiência, em qualquer lugar.",
-        bullets:["Versão Web responsiva","APK para Android","Dados e fluxos sempre organizados"], img:"mobile-3", alt:"Pipyscox — versão Web e mobile" }
+        bullets:["Versão Web responsiva","APK para Android","Dados e fluxos sempre organizados"], imgs:["mobile-3","mobile-4"], alt:"Pipyscox — versão Web e mobile" }
     ],
     blocos: [
       { n:"01", tag:"Quadro", h:"Veja o fluxo inteiro de uma vez.",

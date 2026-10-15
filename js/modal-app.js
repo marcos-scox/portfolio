@@ -100,7 +100,7 @@
       ${app.landingBlocos.map((b,i)=>`<section class="px-section f-bloco ${i%2 ? "px-reverse":""}">
         <div class="f-wrap px-section-inner">
           <div class="px-section-copy f-anim"><span class="px-kicker">${b.tag}</span><h3>${b.h}</h3><p>${b.p}</p><ul>${bullet(b.bullets)}</ul></div>
-          <div class="px-section-art f-palco f-anim"><div class="px-glow"></div>${figura(app.pasta,b.img,b.alt)}</div>
+          <div class="px-section-art f-palco f-anim"><div class="px-glow"></div>${b.imgs ? `<div class="px-phone-stack">${b.imgs.map(n=>figura(app.pasta,n,b.alt)).join("")}</div>` : figura(app.pasta,b.img,b.alt)}</div>
         </div>
       </section>`).join("")}
     </div>
