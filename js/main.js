@@ -52,8 +52,10 @@ const PROJECTS = [
     desc:"Gestão de fluxos no estilo kanban, com versão web responsiva e APK para Android.",
     slides:[
       { img:"pipyscox/dashboard", alt:"Pipyscox — dashboard do sistema de gestão", capa:true },
-      { img:"pipyscox/mobile-1", alt:"Pipyscox — versão mobile para Android" },
-      { img:"pipyscox/mobile-2", alt:"Pipyscox — telas do sistema no celular" }
+      { img:"pipyscox/mobile-1", alt:"Pipyscox — configurações e gestão de equipe no celular", enquadramento:"mobile" },
+      { img:"pipyscox/mobile-2", alt:"Pipyscox — tela da lixeira no celular", enquadramento:"mobile" },
+      { img:"pipyscox/mobile-3", alt:"Pipyscox — dashboard no celular", enquadramento:"mobile" },
+      { img:"pipyscox/mobile-4", alt:"Pipyscox — clientes e fluxos no celular", enquadramento:"mobile" }
     ] }
 ];
 
@@ -157,7 +159,7 @@ document.getElementById("bento").innerHTML = PROJECTS.map((p,i)=>{
       ${temSlides
         ? `<div class="slider" data-slider>
              ${p.slides.map((s,n)=>`
-               <img class="shot slide${n===0?" ativo":""}${s.capa?" slide-capa":""}"
+               <img class="shot slide${n===0?" ativo":""}${s.capa?" slide-capa":""}${s.enquadramento==="mobile"?" slide-mobile":""}"
                  src="img/${s.img}-sm.webp"
                  srcset="img/${s.img}-sm.webp ${s.larguraSm||640}w, img/${s.img}.webp ${s.largura||1168}w"
                  sizes="(max-width:767px) 92vw, ${p.span===7?"58vw":"42vw"}"
